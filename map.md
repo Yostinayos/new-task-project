@@ -11,10 +11,10 @@
     createProfile-post : 'api/profiles'->profileController->redirect('profile-user');
     profile-GET : 'api/profiles/userID/edit'->view('profile-form');
     updateProfile-put : 'api/profiles/userID'->profileController->redirect('profile-user');
-    allUsers-GET : 'api/admin/users'->adminController->view('users-list');
-    showUser-GET : 'api/admin/users/userID'->adminController->view('user');
-    pickUSerRole-GET : 'api/admin/users/userID/edit'->adminController->view('edit-user');
-    pickUSerRole-put : 'api/admin/users/userID'->adminController->redirect('edit-user');
+    allUsers-GET : 'api/admin/empolyees'->adminController->view('empolyees-list');
+    showUser-GET : 'api/admin/empolyees/empolyeeID'->adminController->view('empolyee');
+    pickEmpolyeeRole-GET : 'api/admin/empolyees/empolyeeID/edit'->adminController->view('empolyee-form');
+    pickEmpolyeeRole-put : 'api/admin/empolyees/empolyeeID'->adminController->redirect('edit-empolyee');
 
 # }
 
