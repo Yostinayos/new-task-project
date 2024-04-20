@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Projects;
+namespace App\Http\Requests\Task;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreCustomerRequest extends FormRequest
+class StoreTaskRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +23,12 @@ class StoreCustomerRequest extends FormRequest
     {
         return [
             'name'=>'required|string',
-        'email'=>'required|email|unique',
-        'phone'=>'required|string',
-        'phone2'=>'sometimes|string',
+            'description'=>'required|string',
+         
+            'project_id'=>'required|exists:projects,id',
+            'starting_date'=>'required|date',
+            'ending_date'=>'required|date',
+            'category_id'=>'required|exists:categories,id'
         ];
     }
 }

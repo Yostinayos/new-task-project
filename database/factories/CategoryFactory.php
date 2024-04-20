@@ -2,13 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\Customer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\CustomerPhone>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
  */
-class CustomerPhoneFactory extends Factory
+class CategoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,8 +17,7 @@ class CustomerPhoneFactory extends Factory
     public function definition(): array
     {
         return [
-            'phone' => $this->faker->phoneNumber,
-            'customer_id' => Customer::all()->random()->id,
+            'category' =>$this->faker->word(),
         ];
     }
 }

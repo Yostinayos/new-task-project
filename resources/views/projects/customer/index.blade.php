@@ -8,12 +8,7 @@
         <br />
         
 
-        @foreach ($customer->phones as $phone)
-            
-            {{ $phone->phone }}
-            <br />
-            
-        @endforeach
+        
         @foreach ($customer->projects as $project)
             
             {{ $project->name }}

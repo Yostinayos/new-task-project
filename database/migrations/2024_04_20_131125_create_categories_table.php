@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Customer;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customer_phones', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('phone');
-            $table->foreignIdFor(Customer::class)->constrained();
+            $table->string('category');
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('customer_phones');
+        Schema::dropIfExists('categories');
     }
 };

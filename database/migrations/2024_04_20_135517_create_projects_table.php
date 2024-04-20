@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Customer;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
@@ -21,6 +22,7 @@ return new class extends Migration
             $table->date('ending_date');
             $table->foreignIdFor(User::class)->constrained();
             $table->foreignIdFor(Customer::class)->constrained();
+            $table->foreignIdFor(Category::class)->constrained();
 
             $table->timestamps();
         });

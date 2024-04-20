@@ -17,6 +17,11 @@
             <br />
             {{ $project->ending_date }}
             <br />
+            <form action="{{ route('projects.delete', $project) }}" method="post">
+                @csrf
+                @method('delete')
+                <button><i class="fa fa-trash text-red-500"></i></button>
+            </form>
         
         @endforeach
     @endsection

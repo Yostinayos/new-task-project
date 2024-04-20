@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Category;
+use App\Models\Project;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,12 +13,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('phone');
-            $table->string('phone2')->nullable();
+            $table->string('description');
+            $table->date('starting_date');
+            $table->date('ending_date');
+           
+            $table->foreignIdFor(Project::class)->constrained();
+            $table->foreignIdFor(Category::class)->constrained();
 
             $table->timestamps();
         });
@@ -27,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('customers');
+        Schema::dropIfExists('tasks');
     }
 };
